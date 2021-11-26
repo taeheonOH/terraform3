@@ -22,6 +22,7 @@ resource "aws_instance" "thoh_web" {
  availability_zone = "ap-northeast-2a"
  private_ip = "10.0.0.11"
  subnet_id = aws_subnet.thoh_puba.id
+ user_data = file("./wordpress install.sh")
 
  tags = {
      "Name" = "thoh-web"
